@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Arun Hiremath</title>
+<style>
+:root{--bg:#fff;--bg2:#f7f6f3;--tx:#37352f;--mu:#787774;--bd:#e9e9e7;--hv:#efefed;--ac:#2383e2;--cal:#f1f1ef;--tagbg:#e3f2fd;--tagtx:#1b5f9e;--grn:#dbeddb;--grntx:#1c5b2f;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#191919;--bg2:#202020;--tx:#e6e6e4;--mu:#9b9b97;--bd:#33332f;--hv:#2b2b2a;--ac:#5aa7f0;--cal:#252525;--tagbg:#1e3a52;--tagtx:#8fc4f5;--grn:#243b2b;--grntx:#8fd5a0;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#191919;--bg2:#202020;--tx:#e6e6e4;--mu:#9b9b97;--bd:#33332f;--hv:#2b2b2a;--ac:#5aa7f0;--cal:#252525;--tagbg:#1e3a52;--tagtx:#8fc4f5;--grn:#243b2b;--grntx:#8fd5a0;color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(24px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 ui-sans-serif,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+a{color:inherit}
+#side{position:fixed;left:0;top:0;bottom:0;width:240px;background:var(--bg2);border-right:1px solid var(--bd);padding:calc(14px + env(safe-area-inset-top,0px)) 8px 14px;overflow-y:auto;z-index:10}
+#side .me{display:flex;align-items:center;gap:8px;padding:6px 10px;font-weight:600;font-size:.92rem}
+#side a.nav{display:flex;gap:8px;align-items:center;padding:5px 10px;border-radius:6px;text-decoration:none;color:var(--mu);font-size:.92rem}
+#side a.nav:hover{background:var(--hv)}#side a.nav.on{background:var(--hv);color:var(--tx);font-weight:600}
+#side .lbl{font-size:.75rem;color:var(--mu);padding:14px 10px 4px}
+#theme{margin:14px 10px 0;font:inherit;font-size:.85rem;color:var(--mu);background:none;border:1px solid var(--bd);border-radius:6px;padding:4px 10px;cursor:pointer}
+#menu{display:none;position:fixed;top:calc(8px + env(safe-area-inset-top,0px));left:8px;z-index:20;font-size:1.2rem;background:var(--bg);color:var(--tx);border:1px solid var(--bd);border-radius:6px;padding:2px 10px;cursor:pointer}
+main{margin-left:240px}
+.cover{height:210px;background:linear-gradient(120deg,#0B0F19 0%,#143a5c 45%,#10B981 100%);position:relative;overflow:hidden}
+.cover::after{content:"";position:absolute;inset:0;background-image:radial-gradient(1.5px 1.5px at 30px 40px,#fff8,transparent),radial-gradient(1px 1px at 120px 90px,#fff8,transparent),radial-gradient(1.5px 1.5px at 200px 20px,#fff8,transparent);background-size:240px 120px}
+.page{max-width:820px;margin:0 auto;padding:0 clamp(18px,5vw,56px) 80px}
+.icon{font-size:76px;line-height:1;margin-top:-40px;position:relative;z-index:2}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(2.2rem,5vw,3rem);margin:.2rem 0 .2rem;line-height:1.1}
+h2{font-family:Georgia,serif;font-size:1.7rem;margin:3rem 0 .6rem;padding-top:.6rem;border-top:1px solid var(--bd)}
+h3{font-size:1.05rem;margin:0 0 .25rem}
+p{margin:.5rem 0}.mu{color:var(--mu)}
+.props{margin:1rem 0;font-size:.92rem}.props div{display:flex;gap:12px;padding:5px 0}.props b{width:96px;flex:none;color:var(--mu);font-weight:400}
+.callout{display:flex;gap:12px;background:var(--cal);border-radius:6px;padding:16px 18px;margin:1rem 0}
+.callout .e{font-size:1.4rem}
+.tag{display:inline-block;font-size:.78rem;padding:1px 8px;border-radius:4px;background:var(--tagbg);color:var(--tagtx);margin:2px 4px 2px 0}
+.tag.g{background:var(--grn);color:var(--grntx)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin-top:.8rem}
+.card{border:1px solid var(--bd);border-radius:8px;padding:14px;text-decoration:none;display:block;transition:background .15s,transform .15s;background:var(--bg)}
+a.card:hover{background:var(--hv);transform:translateY(-2px)}
+.card .e{font-size:1.5rem}.card p{font-size:.88rem;color:var(--mu);margin:.3rem 0 .5rem}
+details{border-radius:6px;margin:2px 0}details>summary{cursor:pointer;padding:6px 6px;border-radius:6px;list-style:none;font-weight:500}
+details>summary::before{content:"▸";display:inline-block;width:1.2em;color:var(--mu);transition:transform .15s}
+details[open]>summary::before{transform:rotate(90deg)}
+summary:hover{background:var(--hv)}details>div{padding:2px 6px 10px 1.6em;font-size:.95rem}
+details ul{margin:.3rem 0;padding-left:1.1rem}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:.6rem}
+.shelf h4{margin:0 0 8px;font-size:.85rem;color:var(--mu);font-weight:600}
+.book{display:flex;gap:10px;align-items:center;margin-bottom:10px;text-decoration:none}
+.spine{width:38px;height:54px;border-radius:2px 5px 5px 2px;flex:none;box-shadow:inset 4px 0 0 rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.62rem;font-weight:700;text-align:center;line-height:1.1;padding:2px}
+.book small{display:block;color:var(--mu)}
+.chip{font:inherit;font-size:.82rem;border:1px solid var(--bd);background:none;color:var(--mu);border-radius:99px;padding:2px 12px;cursor:pointer;margin:0 4px 4px 0}
+.chip.on{background:var(--tx);color:var(--bg);border-color:var(--tx)}
+.count{font-family:Georgia,serif;font-size:2.4rem;line-height:1}
+.skill{margin:.5rem 0}.skill b{display:block;font-size:.85rem;color:var(--mu);font-weight:500}
+.big{display:flex;gap:10px;flex-wrap:wrap;margin-top:.8rem}
+.btn{padding:6px 14px;border:1px solid var(--bd);border-radius:6px;text-decoration:none;font-size:.92rem}.btn:hover{background:var(--hv)}
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--bd);border-radius:8px 8px 0 0;overflow:hidden;margin-top:.8rem}
+.tabs button{font:inherit;font-size:.95rem;font-weight:500;color:var(--mu);background:var(--bg2);border:0;border-right:1px solid var(--bd);border-bottom:2px solid transparent;padding:10px 6px;cursor:pointer}
+.tabs button:last-child{border-right:0}.tabs button:hover{background:var(--hv)}
+.tabs button.on{background:var(--bg);color:var(--tx);border-bottom-color:var(--ac)}
+.tabs button:focus-visible{outline:2px solid var(--ac);outline-offset:-2px}
+.panel{display:none;border:1px solid var(--bd);border-top:0;border-radius:0 0 8px 8px;padding:16px}.panel.on{display:block}
+@media(max-width:800px){#side{transform:translateX(-100%);transition:transform .2s;width:260px}body.open #side{transform:none}#menu{display:block}main{margin-left:0}.cover{height:150px}.props b{width:78px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<button id="menu" aria-label="Menu">☰</button>
+<nav id="side">
+ <div class="me"><span>🚀</span> Arun Hiremath</div>
+ <div class="lbl">Pages</div>
+ <a class="nav on" href="#home">🏠 Home</a>
+ <a class="nav" href="#now">⚡ Now</a>
+ <a class="nav" href="#work">🛠️ Work</a>
+ <a class="nav" href="#projects">💻 GitHub projects</a>
+ <a class="nav" href="#skills">🧰 Skills</a>
+ <a class="nav" href="#beyond">🌍 Beyond work</a>
+ <a class="nav" href="#contact">✉️ Contact</a>
+ <button id="theme">Toggle light / dark</button>
+</nav>
+
+<main>
+<div class="cover"></div>
+<div class="page">
+ <div class="icon" id="home">🚀</div>
+ <h1>Arun Hiremath</h1>
+ <p class="mu">Software Engineer | Network &amp; Application Security</p>
+ <div class="props">
+  <div><b>Role</b><span>Cloud Developer III, HPE Aruba Networking</span></div>
+  <div><b>Based in</b><span>Sunnyvale, CA</span></div>
+  <div><b>Focus</b><span><span class="tag">Go</span><span class="tag">RADIUS &amp; NAC</span><span class="tag">Identity</span><span class="tag">AI tooling</span></span></div>
+  <div><b>Status</b><span><span class="tag g">Building things, open to hard problems</span></span></div>
+ </div>
+ <p>I’m a software engineer with 10+ years across network security, identity, cloud services, and embedded platforms. I write Go, Python, C, and C++, and I build high-availability authorization services that connect RADIUS-based systems with cloud identity providers.</p>
+ <h3 style="margin-top:1.4rem">What I’m good at</h3>
+ <div class="callout"><span class="e">🔧</span><div>
+  <p style="margin:0"><b>If something can be automated, I automate it.</b> Agents have made coding much faster, and that speed lets me build tools and services I wouldn’t have had time for before.</p>
+  <p><b>I like owning work end to end</b>, from the first design to a thing running in production. I’m looking for a space where I can contribute, be responsible for delivery, and take on a healthy challenge in a fast-moving world.</p>
+ </div></div>
+
+ <h2 id="now">⚡ Now</h2>
+ <div class="grid">
+  <div class="card"><div class="e">🏗️</div><h3>Building</h3><p>An AI household assistant in Go that plans tasks around where I am.</p></div>
+  <div class="card"><div class="e">📖</div><h3>Reading</h3><p><i>Deal Breaker</i> by Harlan Coben.</p></div>
+  <div class="card"><div class="e">🔐</div><h3>At work</h3><p>Post-quantum cryptography and EU Cyber Resilience Act compliance.</p></div>
+ </div>
+
+ <h2 id="work">🛠️ Work</h2>
+ <p class="mu">Three things I’m proud of, then the full career in toggles.</p>
+ <div class="grid">
+  <div class="card"><h3>RADIUS meets cloud identity</h3><span class="tag">Go</span><span class="tag">RADIUS</span><span class="tag">REST</span>
+   <p><b>Problem:</b> network access systems speak RADIUS, identity lives in Entra ID, Okta, and Google.<br><b>Approach:</b> a high-availability Go authorization plugin that bridges them, with encrypted credential handling aligned to NIST SP 800-53.</p></div>
+  <div class="card"><h3>Phones in the dashboard</h3><span class="tag">C++</span><span class="tag">Android Auto</span><span class="tag">CarPlay</span>
+   <p><b>Problem:</b> cars need reliable phone projection.<br><b>Approach:</b> Linux and Android middleware for Android Auto and Apple CarPlay, deployed in production Mercedes MBUX and Toyota infotainment systems.</p></div>
+  <div class="card"><h3>Secure device onboarding</h3><span class="tag">DPP</span><span class="tag">YANG</span><span class="tag">NAC</span>
+   <p><b>Problem:</b> onboarding IoT and enterprise devices safely, without config mistakes.<br><b>Approach:</b> DPP reconfiguration in Aruba Central 2.5.8, plus YANG models and semantic validation that block bad policies.</p></div>
+ </div>
+ <h3 style="margin-top:1.6rem">Career</h3>
+ <details open><summary>💼 Cloud Developer III · HPE Aruba Networking <span class="mu">· Jan 2022 – Present</span></summary><div><ul>
+  <li>Built a Go authorization plugin bridging RADIUS with REST APIs for Microsoft Entra ID, Okta, and Google Identity.</li>
+  <li>Developed YANG authentication models and NAC validation modules for Aruba Central, with data cleaning and semantic input validation.</li>
+  <li>Delivered Device Provisioning Protocol reconfiguration in Aruba Central 2.5.8.</li>
+  <li>Contributed to EU CRA compliance and PQC implementation; remediated vulnerabilities with CVSS 6.0+.</li>
+  <li>Led the Python 3 migration of legacy services with 50+ dependencies and automated CI/CD validation.</li></ul></div></details>
+ <details><summary>🎓 Software Engineering Intern · HPE <span class="mu">· 2021</span></summary><div>Moved into cloud-scale networking and enterprise security software in the Bay Area.</div></details>
+ <details><summary>✈️ M.S. Computer Engineering · San José State University <span class="mu">· 2020</span></summary><div>Moved to Silicon Valley for graduate study in distributed systems, cloud computing, and machine learning. Project: neural news summarization with Skip-Thought and BERT, evaluated with ROUGE.</div></details>
+ <details><summary>🚗 Software Engineer II · Harman International <span class="mu">· Sep 2016 – Jan 2020</span></summary><div><ul><li>Linux and Android middleware for Android Auto and Apple CarPlay in Mercedes MBUX and Toyota systems.</li><li>Refactored core modules and added unit and component test suites, improving reliability and bug-resolution time.</li></ul></div></details>
+ <details><summary>🔌 Software Engineer · AllGo Embedded Systems <span class="mu">· Jul 2015 – Sep 2016</span></summary><div><ul><li>C++ adapters for System V and POSIX APIs for platform-independent code generation.</li><li>Android Auto proofs of concept shown live at CES 2016.</li><li>Optimized the video playback framework with Android NDK APIs.</li></ul></div></details>
+ <details><summary>📱 Android Application Developer · CocosLabs <span class="mu">· 2014 – 2015</span></summary><div>Shipped native Android apps and built early expertise in mobile architecture and UI responsiveness.</div></details>
+ <details><summary>🎓 B.E. Computer Science · VTU <span class="mu">· 2010 – 2014</span></summary><div>Foundations in systems programming, algorithms, and software engineering. Project: aspect-based opinion mining on product reviews with Python, NLTK, WordNet, and MySQL.</div></details>
+
+ <h2 id="projects">💻 GitHub projects</h2>
+ <p class="mu">Pinned from <a href="https://github.com/arunhiremath92" target="_blank" rel="noopener">github.com/arunhiremath92</a>.</p>
+ <div class="grid">
+  <a class="card" href="https://github.com/arunhiremath92/home-agent" target="_blank" rel="noopener"><div class="e">🏡</div><h3>home-agent</h3><p>AI household task and location assistant: geofence, tasks, nearby places, and context-aware plans.</p><span class="tag">Go</span><span class="tag">Ollama</span><span class="tag">MCP</span></a>
+  <a class="card" href="https://github.com/arunhiremath92/llama-chat" target="_blank" rel="noopener"><div class="e">🦙</div><h3>llama-chat</h3><p>Chat interface experiments with local Llama models.</p><span class="tag">LLM</span></a>
+  <a class="card" href="https://github.com/arunhiremath92/go-practice" target="_blank" rel="noopener"><div class="e">🐹</div><h3>go-practice</h3><p>Go exercises and experiments.</p><span class="tag">Go</span></a>
+  <a class="card" href="https://github.com/arunhiremath92/Text-Summarization" target="_blank" rel="noopener"><div class="e">📰</div><h3>Text-Summarization</h3><p>Skip-Thought versus BERT extractive summaries of news, scored with ROUGE.</p><span class="tag">Python</span><span class="tag">BERT</span></a>
+  <a class="card" href="https://github.com/arunhiremath92/Opinion-Summarization" target="_blank" rel="noopener"><div class="e">💬</div><h3>Opinion-Summarization</h3><p>Aspect-based sentiment mining of product reviews, grouped by feature.</p><span class="tag">Python</span><span class="tag">NLTK</span></a>
+ </div>
+
+ <h2 id="skills">🧰 Skills</h2>
+ <div id="skillBox"></div>
+
+ <h2 id="beyond">🌍 Beyond work</h2>
+ <div class="tabs" role="tablist">
+  <button role="tab" class="on" aria-selected="true" data-t="books">📚 Books</button>
+  <button role="tab" aria-selected="false" data-t="travel">🏔️ Places</button>
+  <button role="tab" aria-selected="false" data-t="interests">🌱 Interests</button>
+ </div>
+ <div class="panel on" id="p-books"><div class="cols shelf">
+  <div><h4>Reading now</h4>
+   <div class="book"><div class="spine" style="background:#b4452f">Deal Breaker</div><span>Deal Breaker<small>Harlan Coben</small></span></div></div>
+  <div><h4>Finished</h4>
+   <div class="book"><div class="spine" style="background:#7a1f1f">1984</div><span>1984<small>George Orwell</small></span></div>
+   <a class="book" href="https://www.goodreads.com/book/show/36012156-razor-sharp" target="_blank" rel="noopener"><div class="spine" style="background:#2f5d62">Razor Sharp</div><span>Razor-Sharp: 13 Short Stories<small>Goodreads</small></span></a>
+   <a class="book" href="https://www.goodreads.com/book/show/57795665-the-locked-door" target="_blank" rel="noopener"><div class="spine" style="background:#3b3b5c">The Locked Door</div><span>The Locked Door<small>Goodreads</small></span></a>
+   <div class="book"><div class="spine" style="background:#c98a1a">Atomic Habits</div><span>Atomic Habits<small>James Clear</small></span></div></div>
+ </div></div>
+ <div class="panel" id="p-travel">
+ <div style="display:flex;gap:28px;align-items:flex-end;margin:.5rem 0 1rem"><div><div class="count" id="cnt">13</div><span class="mu">national parks</span></div><div><div class="count">+1</div><span class="mu">Sedona</span></div></div>
+ <div id="chips"></div>
+ <div class="grid" id="parks"></div></div>
+ <div class="panel" id="p-interests">
+ <div class="grid">
+  <div class="card"><div class="e">🪴</div><h3>Gardening</h3><p>Growing things, slowly. A good counterweight to fast-moving software.</p></div>
+  <div class="card"><div class="e">🍳</div><h3>Cooking</h3><p>Kitchen experiments, one recipe at a time.</p></div>
+  <div class="card"><div class="e">🚴</div><h3>Biking</h3><p>Out on two wheels whenever the weather allows.</p></div>
+  <div class="card"><div class="e">🥾</div><h3>Hiking</h3><p>Half Dome, Angels Landing, and the High Line Trail so far.</p></div>
+ </div></div>
+
+ <h2 id="contact">✉️ Contact</h2>
+ <p>Want to talk security, identity, or tools that build themselves? Say hi.</p>
+ <div class="big">
+  <a class="btn" href="mailto:arunhiremath92@gmail.com">✉️ arunhiremath92@gmail.com</a>
+  <a class="btn" href="https://www.linkedin.com/in/arunhiremath92/" target="_blank" rel="noopener">LinkedIn</a>
+  <a class="btn" href="https://github.com/arunhiremath92" target="_blank" rel="noopener">GitHub</a>
+ </div>
+</div>
+</main>
+
+<script>
+var parks=[
+["Yosemite","CA","🧗","Hike to Half Dome"],["Zion","UT","🪨","Hike to Angels Landing"],["Yellowstone","WY","♨️",""],
+["Hawaii Volcanoes","HI","🌋",""],["Mount Rainier","WA","🗻",""],["Olympic","WA","🌲",""],["Bryce Canyon","UT","🏜️",""],
+["Grand Canyon","AZ","🏞️",""],["Great Smoky Mountains","TN","🌫️",""],["Grand Teton","WY","⛰️",""],["Sequoia","CA","🌳",""],
+["Redwood","CA","🌲",""],["Glacier","MT","🧊","High Line Trail"],["Sedona","AZ","🌉","Devil’s Bridge (not a national park)"]];
+var st="All",chips=document.getElementById("chips");
+function draw(){
+ var list=parks.filter(function(p){return st=="All"||p[1]==st});
+ document.getElementById("parks").innerHTML=list.map(function(p){return'<div class="card"><div class="e">'+p[2]+'</div><h3>'+p[0]+'</h3><span class="tag g">'+p[1]+'</span>'+(p[3]?'<p>'+p[3]+'</p>':"")+'</div>'}).join("");
+ chips.innerHTML=["All"].concat([...new Set(parks.map(function(p){return p[1]}))]).map(function(s){return'<button class="chip'+(s==st?" on":"")+'" data-s="'+s+'">'+s+'</button>'}).join("");
+}
+chips.addEventListener("click",function(e){var s=e.target.dataset.s;if(s){st=s;draw()}});
+draw();
+document.querySelector(".tabs").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;
+ document.querySelectorAll(".tabs button").forEach(function(x){var on=x==b;x.classList.toggle("on",on);x.setAttribute("aria-selected",on)});
+ document.querySelectorAll(".panel").forEach(function(p){p.classList.toggle("on",p.id=="p-"+b.dataset.t)})});
+var skills={"Programming":"Go, Python, C, C++, Java, SQL, Shell Scripting","Network & Security":"RADIUS, AAA, NAC, IAM, Zero Trust, mTLS, HTTP/REST, NETCONF/YANG, Open Policy Agent (OPA), NIST SP 800-53, EU Cyber Resilience Act (CRA), Post-Quantum Cryptography (PQC)","AI Development":"Ollama, OpenAI-compatible APIs, Prompt Design, Task Classification & Planning, Structured Model Outputs, MCP-based Tooling","Cloud & Platforms":"AWS, Azure, Linux, Android, Docker, Kubernetes","Data & Messaging":"PostgreSQL, Redis, Kafka","APIs & Tools":"gRPC, GraphQL, REST APIs, Vault, JNI, Make, CMake, GDB, React.js"};
+document.getElementById("skillBox").innerHTML=Object.keys(skills).map(function(k){return'<details><summary>'+k.replace("&","&amp;")+'</summary><div>'+skills[k].split(", ").map(function(s){return'<span class="tag">'+s.replace("&","&amp;")+'</span>'}).join("")+'</div></details>'}).join("");
+var navs=[].slice.call(document.querySelectorAll("a.nav")),secs=navs.map(function(a){return document.querySelector(a.getAttribute("href"))});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){navs.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")=="#"+e.target.id)})}})},{rootMargin:"-20% 0px -70% 0px"});
+secs.forEach(function(s){io.observe(s)});
+navs.forEach(function(a){a.addEventListener("click",function(){document.body.classList.remove("open")})});
+document.getElementById("menu").onclick=function(){document.body.classList.toggle("open")};
+document.getElementById("theme").onclick=function(){
+ var r=document.documentElement,dark=matchMedia("(prefers-color-scheme: dark)").matches;
+ var cur=r.dataset.theme||(dark?"dark":"light");r.dataset.theme=cur=="dark"?"light":"dark";
+};
+</script>
+</body>
+</html>
